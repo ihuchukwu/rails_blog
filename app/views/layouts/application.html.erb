@@ -19,7 +19,7 @@
         <li class="category">Website</li>
         <li><%=link_to "Blog", root_path%></li>
         <li><%=link_to "About Me", about_path%></li>
-        <li><%= link_to "Sign-in", new_user_session_path('devise') %></li>
+        <li><%= link_to "Sign-in", new_post_path %></li>
       </ul>
 
       <% if !user_signed_in? %>
