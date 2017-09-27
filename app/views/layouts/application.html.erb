@@ -19,20 +19,19 @@
         <li class="category">Website</li>
         <li><%=link_to "Blog", root_path%></li>
         <li><%=link_to "About Me", about_path%></li>
-        <li><a href="mailto:hey@chukwuemeka.me">Sign-in</a></li>
+        <li><%= link_to "Sign-in", new_user_session_path('devise') %></li>
       </ul>
 
       <% if !user_signed_in? %>
-      <p class="sign-in">Admin Login</p>
+      <p class="sign-in"></p>
       <% end %>
     </div>
 
     <div id="main_content">
       <div id="header">
-        <% if current_page?(root_path) %>
-          <p>All Posts</p>
-        <% elsif current_page?(about_path) %>
-          <p>About</p>
+        <% if current_page?(root_path) %><p>All Posts</p>
+          <%= link_to "Blog", root_path %>
+        <% elsif current_page?(about_path) %><p>About</p>
         <% else %>
           <%= link_to "Back to all Posts", root_path %>
           <% end %>
